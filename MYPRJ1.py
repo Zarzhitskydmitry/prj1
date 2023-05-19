@@ -36,9 +36,19 @@ print(e)
 print("END\n---------------------------------\n")
 
 print("Работа с циклами\n---------------------------------\n")
-for per01 in range(0,6):                                                # Вывести шесть раз(в range) для per01
+for per01 in range(0,6):                                                # Вывести от нуля до шести (в range) для per01
     print(b)
     print(per01)
+print ("END")
+for per02 in range(-50,3,4):                                            # Вывести от -5 до 3 с шагом 4 (в range) для per02
+    print("Number x="+ str(per02))
+    if per02 == -10:                                                    # если per02 будет точно равна -40
+        print("END_of_loop")
+        break                                                           # Остановить программу
+per03=1
+while True:                                                             # Запустить и продолжить цикл пока True
+    print(per03)
+    per03+=1                                                            # К переменной per03 прибавлять 1
 
 print("END\n---------------------------------\n")
 
