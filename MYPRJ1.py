@@ -191,9 +191,9 @@ while True:                                                             # соз
         break
     else:
         print(message01 + "\nPassword is not correct")
-mylist01 = []
+mylist01 = []                                                           # создаем массив в который будем добавлять все что введет пользователь
 msg = ''
-while msg != 'STOP':
+while msg != 'STOP':                                                    # записывать в массив до тех пор пока он не введет STOP
     msg = input("\nEnter new item or STOP for finish\n") 
     mylist01.append(msg)
 print("=====================")
