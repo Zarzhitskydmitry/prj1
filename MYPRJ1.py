@@ -104,7 +104,7 @@ else:
     print("NO you are wrong")                                           # Иначе ("NO you are wrong") 
 if (per06 <= 18):                                                       # Если переменная меньше или равна 18, то ("Ты слишком молод")
     print ("Ты слишком молод")
-elif (per06 >=19) and (per06 < 20):                                    # и если переменная больше или равна 19 и меньше или равна 21, то ("you teenager")
+elif (per06 >=19) and (per06 < 20):                                     # и если переменная больше или равна 19 и меньше или равна 21, то ("you teenager")
     print ("you teenager")
 else:
     print("You are old")                                                # Иначе ("You are old") 
@@ -121,6 +121,82 @@ for xxxx in cities:                                                     # For п
         print(xxxx+" - Not my city")                                    # Иначе (xxxx+" - Not my city")
 print("=========================================================================================\nEND\n=========================================================================================\n")
 
-print("=========================================================================================\nРабота со словарями\n=========================================================================================\n")
+print("=========================================================================================\nРабота со словарями/объектами\n=========================================================================================\n")
+enemy = {                                                               # создаем объект enemy с его параметрами/свойтсвами
+    'health': 100,
+    'armor': 100,
+    'strange': 40,
+    'intelenge': 10,
+    'color': 'green',
+    'name': 'Browser',
+    'awards': ['Perviy', 'Vtoroy', 'etc'],                              # можно добавить массив из значений
+    'image': ['iamge1.png', 'image2.png', 'iamge3.png', 'image4.png'],
+}
+print(enemy)
+print(enemy.keys())                                                     # Вывести название параметров
+print(enemy.values())                                                   # Вывести значение параметров
+print("Health enemy: "+str(enemy['health']))                            # вывести отдельный параметр enemy
+print("Name enemy: "+enemy['name'])                                     # вывести отдельный параметр enemy
+enemy['rank'] = 'silver'                                                # добавить еще параметр enemy
+print(enemy)
+del enemy ['intelenge']                                                 # удаляем параметр
+print(enemy)
+enemy['armor'] = enemy['armor'] - 20                                    # вычесть из параметра 
+enemy['health'] = enemy['health'] - 40
+if enemy['health'] <= 65:
+    enemy['color'] = 'yellow'
+print(enemy)
+print ("END")
+all_enemies = []                                                        # создаем массив из enemy
+for x_enemy in range(0,4):                                              # создает цикл от 0 до 4
+    all_enemies.append(enemy)                                           # делает добавление enemy в массив all_enemies(Создаются клоны)
+for for_enemies in all_enemies:                                         # выведем построчно каждого enemy
+    print(for_enemies)
+print('=========================================')
+enemy2 = {                                                               # создаем объект enemy2 с его параметрами/свойтсвами
+    'health': 100,
+    'armor': 100,
+    'strange': 40,
+    'intelenge': 10,
+    'color': 'green',
+    'name': 'Browser',
+    'awards': ['Perviy', 'Vtoroy', 'etc'],                              # можно добавить массив из значений
+    'image': ['iamge1.png', 'image2.png', 'iamge3.png', 'image4.png'],
+}
+all2_enemies = []
+for y_enemy in range(0,6):                                              # создает цикл от 0 до 4 
+    all2_enemies.append(enemy2.copy())                                  # делает добавление enemy в массив all2_enemies(Создаются копии со своими параметрами)
+for for2_enemies in all2_enemies:                                       # выведем построчно каждого enemy2
+    print(for2_enemies)
+print('========================================')
+all2_enemies[3]['health'] += -40                                        # счет идет с 0 индекса
+for for3_enemies in all2_enemies:                                       # выведем построчно каждого enemy2
+    print(for3_enemies)
+print("=========================================================================================\nEND\n=========================================================================================\n")
 
+print("=========================================================================================\nРабота с вводом данных\n=========================================================================================\n")
+per_old = input ("Vvedite vash vozrast: ")                              # создаем переменную которую введет пользователь
+per_name = input ("Vvedite vashe imya: ")                                        
+if (int(per_old) <= 18):                                                # Введенные числа нужно конвертировать в числа int чтобы их сравнивать или складывать                                            
+    print ("Privet - " + per_name + " " + str(per_old) + " you are kid")
+elif (int(per_old) >=19) and (int(per_old) < 20):                                 
+    print ("Privet - " + per_name + " "  + str(per_old) + " you are teenager")
+else:
+    print("Privet - " + per_name + " " + str(per_old) + " you are old")
+message01 = ''
+while True:                                                             # создаем цикл ввода слова до тех пор пока пользователь не введет sekret
+    message01 = input ("Enter your password ")  
+    if message01 == 'sekret':
+        print("succes")
+        break
+    else:
+        print(message01 + "\nPassword is not correct")
+mylist01 = []
+msg = ''
+while msg != 'STOP':
+    msg = input("\nEnter new item or STOP for finish\n") 
+    mylist01.append(msg)
+print("=====================")
+mylist01.remove('STOP')
+print(mylist01)                                            
 print("=========================================================================================\nEND\n=========================================================================================\n")
